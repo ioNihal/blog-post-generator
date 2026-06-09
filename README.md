@@ -3,7 +3,7 @@
 <p align="center">
   <a href="https://nodejs.org"><img src="https://img.shields.io/badge/Node.js-%3E%3D_18-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js Version"></a>
   <a href="https://aistudio.google.com/"><img src="https://img.shields.io/badge/Gemini_AI-Powered-4285F4?style=for-the-badge&logo=google-gemini&logoColor=white" alt="Gemini AI"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/github/license/ioNihal/blog-post-generator?style=for-the-badge&color=8A2BE2" alt="License"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-8A2BE2?style=for-the-badge" alt="License"></a>
   <a href="https://github.com/ioNihal/blog-post-generator/stargazers"><img src="https://img.shields.io/github/stars/ioNihal/blog-post-generator?style=for-the-badge&color=ffd700" alt="GitHub Stars"></a>
   <a href="https://github.com/ioNihal/blog-post-generator/network/members"><img src="https://img.shields.io/github/forks/ioNihal/blog-post-generator?style=for-the-badge&color=00bfff" alt="GitHub Forks"></a>
   <a href="https://github.com/ioNihal/blog-post-generator/pulls"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen?style=for-the-badge" alt="PRs Welcome"></a>
