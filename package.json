@@ -1,0 +1,34 @@
+{
+  "name": "blog-post-generator",
+  "version": "1.0.0",
+  "description": "Automated developer journal generator - turns your daily GitHub commits into personal blog posts using AI.",
+  "private": false,
+  "type": "module",
+  "scripts": {
+    "generate": "node scripts/generate.js"
+  },
+  "keywords": [
+    "blog",
+    "journal",
+    "devlog",
+    "github",
+    "gemini",
+    "ai",
+    "automation",
+    "github-actions",
+    "developer-tools"
+  ],
+  "author": {
+    "name": "ioNihal",
+    "url": "https://ionihal.vercel.app"
+  },
+  "homepage": "https://github.com/ioNihal/blog-post-generator#readme",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ioNihal/blog-post-generator"
+  },
+  "dependencies": {
+    "@google/genai": "^1.0.0"
+  }
+}

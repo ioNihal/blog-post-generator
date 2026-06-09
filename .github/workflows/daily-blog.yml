@@ -1,0 +1,46 @@
+name: Daily Blog
+
+on:
+  schedule:
+    - cron: '30 18 * * *' # runs at 12:00 AM IST
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - run: npm install
+
+      - run: node scripts/generate.js
+        env:
+          # secrets 
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+          # variables
+          GH_USERNAME: ${{ vars.GH_USERNAME }}
+          IGNORED_REPOS: ${{ vars.IGNORED_REPOS }}
+          SKIP_KEYWORD: ${{ vars.SKIP_KEYWORD }}
+          GIT_USER_NAME: ${{ vars.GIT_USER_NAME }}
+          GIT_USER_EMAIL: ${{ vars.GIT_USER_EMAIL }}
+
+      - name: Commit generated blog
+        run: |
+          git config user.name "${{ vars.GIT_USER_NAME || 'daily-blog-bot' }}"
+          git config user.email "${{ vars.GIT_USER_EMAIL || 'bot@daily-blog-generator' }}"
+
+          git add generated
+
+          git diff --staged --quiet || git commit -m "blog: auto-generated"
+
+          git push

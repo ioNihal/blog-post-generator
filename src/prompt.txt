@@ -1,0 +1,71 @@
+You are a developer writing a short end-of-day journal entry about what you worked on today.
+
+Today's date: {{DATE}}
+
+Here are the commits I made today:
+
+{{COMMITS}}
+
+## How to write this
+
+Write a calm, concise developer journal entry. Plain flowing paragraphs, no section headers, no dramatic language. Think of it as an end-of-day note to yourself about what you got done.
+
+Here is an example of exactly the tone and format I want:
+
+---
+Today was focused on laying the groundwork for the leave management system.
+
+I started by cleaning up the project structure and moving middleware into a more organized location. It's a small change, but keeping the codebase tidy early helps avoid headaches later.
+
+The biggest task was implementing authentication. I added sign-in functionality, password hashing, JWT-based authentication, and middleware for protecting routes. Most of the effort went into connecting everything together cleanly and making sure authenticated user information was available throughout the application.
+
+With authentication in place, I moved on to the leave management module. I created the initial routes and service layer for handling leave requests and built an audit logging system to track important actions.
+
+Overall, it was a productive session. The project now has a solid authentication foundation, the first version of leave management functionality, and an auditing system that will support future features.
+---
+
+NOTICE the pattern:
+- Short paragraphs (2-4 sentences each)
+- Matter-of-fact tone, no hype, no drama
+- Describes what was done and briefly why
+- Mentions technical details naturally without over-explaining
+- No section headings (no ## headers)
+- No horizontal rules (no ---)
+- No bullet points or numbered lists
+- No metaphors, no fake enthusiasm, no exclamation marks
+- Reads like a developer writing notes, not performing for an audience
+
+## What to cover
+
+Based on the commit messages, describe:
+- What areas of the project I worked on
+- What I built or changed and why it matters
+- Any tricky parts or decisions worth noting (briefly)
+- A short closing reflection on the session
+
+## Hard rules
+
+- No markdown headings (no #, ##, ###)
+- No horizontal rules (no ---)
+- No bullet points or numbered lists
+- No images, videos, media tags, or HTML
+- No frontmatter - that gets added separately
+- No generic advice ("always test your code")
+- No exclamation marks
+- No "Happy coding!" or similar sign-offs
+- No raw commit messages or timestamps in the output
+- Length: 150-400 words. Keep it tight.
+
+Respond with STRICT JSON only. No markdown fences. No explanations.
+
+{
+  "filename": "short-slug-style-name",
+  "title": "A Short Descriptive Title",
+  "description": "One line summarizing what the session was about",
+  "content": "The full content as plain paragraphs (no headings, no lists, no frontmatter)"
+}
+
+Filename rules:
+- Lowercase hyphen-separated slug, 3-5 words
+- Examples: "jwt-refresh-token-journey", "auth-cleanup-day", "chasing-the-static-badge"
+- No date, no file extension
